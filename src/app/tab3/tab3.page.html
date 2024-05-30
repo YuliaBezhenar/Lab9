@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Lab 9 - ПІС </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>MVVM</ion-card-title>
+      <ion-card-subtitle
+        >Варіант: 1. Розрахувати площу та периметр рівнобедреного
+        трикутника.</ion-card-subtitle
+      >
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          id="b"
+          value="4"
+          labelPlacement="floating"
+          placeholder="Основа трикутника:"
+          type="number"
+          label="Введіть значення"
+          min="1"
+          max="100"
+          #InputB
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          id="s"
+          value="3"
+          labelPlacement="floating"
+          placeholder="Бічна сторона трикутника:"
+          type="number"
+          label="Введіть значення"
+          min="1"
+          max="100"
+          #InputS
+        ></ion-input>
+      </ion-item>
+      <ion-button (click)="result(InputB.value, InputS.value)" expand="block"
+        >Додати трикутник</ion-button
+      >
+      <ion-item>
+        <ion-label>Площа: {{area}}. Периметр: {{perimetr}} </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

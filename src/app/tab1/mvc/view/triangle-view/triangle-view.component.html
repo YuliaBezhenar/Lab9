@@ -1,0 +1,41 @@
+<form [formGroup]="triangleForm" (ngSubmit)="add(triangleForm.value)">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Рівнобедрений трикутник:</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          id="b"
+          labelPlacement="floating"
+          placeholder="Основа трикутника:"
+          type="number"
+          label="Введіть значення"
+          min="1"
+          max="100"
+          formControlName="b"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          id="s"
+          labelPlacement="floating"
+          placeholder="Бічна сторона трикутника:"
+          type="number"
+          label="Введіть значення"
+          min="1"
+          max="100"
+          formControlName="s"
+        ></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" expand="block" [disabled]="!triangleForm.valid"
+    >Додати трикутник</ion-button
+  >
+</form>
+<ion-item *ngFor="let t of triangles">
+  a = {{ t.base }}, b = {{ t.side }}, c = {{ t.side }}. Периметр:
+  {{ t.perimetr }}, Площа: {{ t.area }}
+</ion-item>
